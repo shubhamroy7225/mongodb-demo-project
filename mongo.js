@@ -11,7 +11,9 @@ const createProduct = async (req, res, next) => {
         await client.connect({useUnifiedTopology: true})
         const db =  client.db()
         const result =db.collection('products').insertOne(productData)
+        
     }catch(error){
+      console.log(error)
         return res.json({message:'Could not store data'})
 
     }
